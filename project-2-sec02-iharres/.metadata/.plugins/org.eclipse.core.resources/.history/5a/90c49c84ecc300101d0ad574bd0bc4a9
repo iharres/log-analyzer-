@@ -1,0 +1,54 @@
+package logAnalyzer;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Vector;
+
+public class RecursiveLogTraversal {
+	private File root;
+	
+	private RecursiveLogTraversal(File root) {
+		
+	}
+	
+	private void traverse(File dir, Vector<File> foundFiles) {
+        // TODO: recursively locate *.log files
+
+	}
+	
+	private boolean parseFile(File f, Vector<logEntry> entries) {
+		boolean valid = false;
+		try(BufferedReader reader  = new BufferedReader(new FileReader (f))){
+			String line;
+			while((line=reader.readLine()) != null) {
+				logEntry entry = parseLine(line);
+				if(entry != null) {
+					entries.add(entry);
+					valid = true;
+				}
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return valid;
+	}
+	
+	private logEntry parseLine(String line) {
+        // TODO: parse a log line into a LogEntry
+
+		return null;
+	}
+	
+	private Vector<Suspicious> aggregate(Vector<logEntry> entries) {
+        // TODO: group by IP & count failed attempts
+		System.out.println(entries);
+		return new Vector<>();
+	}
+	
+	
+}

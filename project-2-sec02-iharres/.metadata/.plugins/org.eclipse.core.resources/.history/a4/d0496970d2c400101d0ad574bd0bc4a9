@@ -1,0 +1,10 @@
+package logAnalyzer;
+
+import java.util.Vector;
+
+public class printer {
+	
+	public void printReports(Vector<Suspicious> Suspicious) {
+		//print output
+	}
+}

@@ -1,0 +1,17 @@
+package logAnalyzer;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class logFile {
+	public static void main(String[] args) {
+		try {
+			BufferedWriter writer = new BufferedWriter(new FileWriter("logs.txt"));
+			writer.write("writing");
+			writer.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

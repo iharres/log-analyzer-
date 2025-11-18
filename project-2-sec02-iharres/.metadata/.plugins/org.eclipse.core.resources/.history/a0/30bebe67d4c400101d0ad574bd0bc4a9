@@ -1,0 +1,26 @@
+package logAnalyzer;
+import java.io.File;
+import java.util.Vector;
+
+public class logAnalyzer {
+
+	 public static void main(String[] args) {
+		 RecursiveLogTraversal logTraversal = new RecursiveLogTraversal(new File("."));
+		 Vector<File> logFiles = new Vector<>();
+		 logTraversal.traverse(new File("."), logFiles);
+		 Vector<logEntry> Entry = new Vector<>();
+		
+		 for (File f : logFiles) {
+			 System.out.println("Parsing file: " + f.getAbsolutePath());
+			 logTraversal.parseFile(f, Entry);		
+			 
+	    }
+	   	Vector<Suspicious> suspicious = logTraversal.aggregate(Entry);
+	   	
+	   	printer p = new printer();
+	   	p.printReports(suspicious);
+//	   	System.out.println("Running from: " + new File(".").getAbsolutePath());
+
+	 }
+}
+ 

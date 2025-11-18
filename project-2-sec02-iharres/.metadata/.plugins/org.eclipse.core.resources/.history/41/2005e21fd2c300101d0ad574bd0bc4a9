@@ -1,0 +1,33 @@
+package logAnalyzer;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+
+
+public class logFile {
+	public static void main(String[] args) {
+		String [] logs = {"2025-11-07 10:22:01 [AUTH] user=Kara ip=131.44.45.22 status=FAIL"
+				,"2025-11-07 10:22:05 [AUTH] user=Casey ip=203.0.113.7 status=FAIL",
+				"2025-11-07 10:22:10 [AUTH] user=Kara ip=131.44.45.22 status=FAIL",
+				"2025-11-07 10:22:20 [AUTH] user=Logan ip=203.0.113.7 status=OK",
+				"2025-11-07 10:23:00 [AUTH] user=Casey ip=203.0.113.7 status=FAIL",
+				"2025-11-07 10:24:15 [AUTH] user=Logan ip=203.0.113.7 status=FAIL",
+				"2025-11-07 10:24:20 [AUTH] user=May ip=123.123.123.123 status=OK",
+				"2025-11-07 10:25:15 [AUTH] user=Kara ip=131.44.45.22 status=FAIL",
+				"2025-11-07 10:25:35 [AUTH] user=Kara ip=131.44.45.22 status=FAIL",
+				"2025-11-07 10:26:40 [AUTH] user=Eli ip=131.44.45.22 status=FAIL",
+				"2025-11-07 10:27:55 [AUTH] user=Eli ip=131.44.45.22 status=FAIL",
+				"2025-11-07 10:28:22 [AUTH] user=Logan ip=203.0.113.7 status=FAIL"	
+		};
+		try {
+			BufferedWriter writer = new BufferedWriter(new FileWriter("logs.txt"));
+			for(String log : logs) {
+				writer.write("\n" + log);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

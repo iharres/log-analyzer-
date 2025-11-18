@@ -1,0 +1,15 @@
+package logAnalyzer;
+import java.io.File;
+import java.util.Vector;
+
+public class logAnalyzer {
+
+	 public static void main(String[] args) {
+	        // TODO:
+	        // 1) Read directory from args
+	        // 2) Run recursive traversal
+	        // 3) Parse entries
+	        // 4) Aggregate suspicious IPs
+	        // 5) Print report
+	    }
+}
