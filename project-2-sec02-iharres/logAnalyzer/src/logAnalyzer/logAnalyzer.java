@@ -18,8 +18,6 @@ public class logAnalyzer {
 	   	
 	   	printer p = new printer();
 	   	p.printReports(suspicious);
-//	   	System.out.println("Running from: " + new File(".").getAbsolutePath());
-
 	 }
 }
  

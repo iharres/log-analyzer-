@@ -54,7 +54,7 @@ public class RecursiveLogTraversal {
 		return valid;
 	}
 	
-	private logEntry parseLine(String line) {
+	public logEntry parseLine(String line) {
 		if(line == null || line.isEmpty()) {
 			return null;
 		}
